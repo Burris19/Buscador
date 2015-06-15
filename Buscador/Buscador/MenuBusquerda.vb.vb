@@ -1,8 +1,9 @@
-﻿Public Class frmBuscador
+﻿Public Class Menu_Busquerda_vb
 #Region "Variables"
     Private listaImagenes As New List(Of Bitmap)()
     Dim valorBuscado As String
     Dim codigoPdf As Integer
+    Dim nombreArchivo As String
 #End Region
 
 #Region "Eventos"
@@ -114,18 +115,34 @@
         End If
     End Sub
 #End Region
-    
-
-    
-
     Private Sub listadoResultado_CellDoubleClick(sender As Object, e As Telerik.WinControls.UI.GridViewCellEventArgs) Handles listadoResultado.CellDoubleClick
         codigoPdf = CInt(listadoResultado.Rows(e.RowIndex).Cells("codigo").Value)
-        MessageBox.Show(codigoPdf)
 
+        If codigoPdf = 1 Then
+            nombreArchivo = "animales_salvajes.pdf"
+        ElseIf codigoPdf = 2 Then
+            nombreArchivo = "animales_domesticos.pdf"
+        ElseIf codigoPdf = 3 Then
+            nombreArchivo = "cinco_sentidos.pdf"
+        ElseIf codigoPdf = 4 Then
+            nombreArchivo = "escuela.pdf"
+        ElseIf codigoPdf = 5 Then
+            nombreArchivo = "frutas.pdf"
+        ElseIf codigoPdf = 6 Then
+            nombreArchivo = "sistemas.pdf"
+        ElseIf codigoPdf = 7 Then
+            nombreArchivo = "verduras.pdf"
+        ElseIf codigoPdf = 8 Then
+            nombreArchivo = "vocales.pdf"
+        End If
 
+        Dim visor As New Visor
+        visor.archivo = nombreArchivo
+        visor.Show()
     End Sub
 
-
-
-
+    
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Me.StartPosition = MinimizeBox
+    End Sub
 End Class

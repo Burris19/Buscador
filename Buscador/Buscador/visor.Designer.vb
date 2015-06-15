@@ -22,39 +22,54 @@ Partial Class Visor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.pdfView = New Telerik.WinControls.UI.RadPdfViewer()
-        CType(Me.pdfView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPdfViewerNavigator1 = New Telerik.WinControls.UI.RadPdfViewerNavigator()
+        Me.pdfview = New Telerik.WinControls.UI.RadPdfViewer()
+        CType(Me.RadPdfViewerNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pdfview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'pdfView
+        'RadPdfViewerNavigator1
         '
-        Me.pdfView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pdfView.Location = New System.Drawing.Point(0, 0)
-        Me.pdfView.Name = "pdfView"
-        Me.pdfView.Size = New System.Drawing.Size(781, 500)
-        Me.pdfView.TabIndex = 0
-        Me.pdfView.Text = "RadPdfViewer1"
-        Me.pdfView.ThemeName = "ControlDefault"
-        Me.pdfView.ThumbnailsScaleFactor = 0.15!
+        Me.RadPdfViewerNavigator1.AssociatedViewer = Me.pdfview
+        Me.RadPdfViewerNavigator1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadPdfViewerNavigator1.Location = New System.Drawing.Point(0, 0)
+        Me.RadPdfViewerNavigator1.Name = "RadPdfViewerNavigator1"
+        Me.RadPdfViewerNavigator1.Size = New System.Drawing.Size(781, 38)
+        Me.RadPdfViewerNavigator1.TabIndex = 1
+        Me.RadPdfViewerNavigator1.Text = "RadPdfViewerNavigator1"
+        '
+        'pdfview
+        '
+        Me.pdfview.Location = New System.Drawing.Point(3, 44)
+        Me.pdfview.Name = "pdfview"
+        Me.pdfview.Size = New System.Drawing.Size(778, 453)
+        Me.pdfview.TabIndex = 2
+        Me.pdfview.Text = "RadPdfViewer1"
+        Me.pdfview.ThumbnailsScaleFactor = 0.15!
         '
         'Visor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(781, 500)
-        Me.Controls.Add(Me.pdfView)
+        Me.Controls.Add(Me.pdfview)
+        Me.Controls.Add(Me.RadPdfViewerNavigator1)
         Me.Name = "Visor"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Visor"
-        CType(Me.pdfView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPdfViewerNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pdfview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents pdfView As Telerik.WinControls.UI.RadPdfViewer
+    Friend WithEvents RadPdfViewerNavigator1 As Telerik.WinControls.UI.RadPdfViewerNavigator
+    Friend WithEvents pdfview As Telerik.WinControls.UI.RadPdfViewer
 End Class
 

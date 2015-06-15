@@ -8,7 +8,7 @@
         ProgressBar1.Increment(1)
         If ProgressBar1.Value = ProgressBar1.Maximum Then
             Me.Hide()
-            FrmBuscador.Show()
+            Menu_Busquerda_vb.Show()
         End If
     End Sub
 End Class
