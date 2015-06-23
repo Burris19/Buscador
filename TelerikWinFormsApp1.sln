@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TelerikWinFormsApp1", "TelerikWinFormsApp1\TelerikWinFormsApp1.vbproj", "{15BE9E78-C9CE-4B05-A244-E9E22C4E9FC4}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TelerikWinFormsApp1", "TelerikWinFormsApp1\TelerikWinFormsApp1.vbproj", "{A511E2A5-62A9-4978-A326-6DE483683FFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15BE9E78-C9CE-4B05-A244-E9E22C4E9FC4}.Debug|x86.ActiveCfg = Debug|x86
-		{15BE9E78-C9CE-4B05-A244-E9E22C4E9FC4}.Debug|x86.Build.0 = Debug|x86
-		{15BE9E78-C9CE-4B05-A244-E9E22C4E9FC4}.Release|x86.ActiveCfg = Release|x86
-		{15BE9E78-C9CE-4B05-A244-E9E22C4E9FC4}.Release|x86.Build.0 = Release|x86
+		{A511E2A5-62A9-4978-A326-6DE483683FFC}.Debug|x86.ActiveCfg = Debug|x86
+		{A511E2A5-62A9-4978-A326-6DE483683FFC}.Debug|x86.Build.0 = Debug|x86
+		{A511E2A5-62A9-4978-A326-6DE483683FFC}.Release|x86.ActiveCfg = Release|x86
+		{A511E2A5-62A9-4978-A326-6DE483683FFC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

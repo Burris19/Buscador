@@ -1,6 +1,6 @@
 ﻿Module App
     Public Sub Main()
         Application.EnableVisualStyles()
-        Application.Run(New frmInicio())
+        Application.Run(New FrmBuscador)
     End Sub
 End Module
