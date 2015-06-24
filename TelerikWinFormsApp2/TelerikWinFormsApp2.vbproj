@@ -6,15 +6,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A511E2A5-62A9-4978-A326-6DE483683FFC}</ProjectGuid>
+    <ProjectGuid>{9BAC76BD-2D0D-45F6-B2CC-82A3AEC732C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>TelerikWinFormsApp1.My.MyApplication</StartupObject>
-    <RootNamespace>TelerikWinFormsApp1</RootNamespace>
-    <AssemblyName>TelerikWinFormsApp1</AssemblyName>
+    <StartupObject>TelerikWinFormsApp2.My.MyApplication</StartupObject>
+    <RootNamespace>TelerikWinFormsApp2</RootNamespace>
+    <AssemblyName>TelerikWinFormsApp2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -23,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>TelerikWinFormsApp1.xml</DocumentationFile>
+    <DocumentationFile>TelerikWinFormsApp2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -33,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>TelerikWinFormsApp1.xml</DocumentationFile>
+    <DocumentationFile>TelerikWinFormsApp2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,7 +51,12 @@
     <Reference Include="EQATEC.Analytics.Monitor, Version=3.0.206.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL" />
     <Reference Include="RadControlSpy, Version=2014.1.226.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\System.Data.SQLite\2012\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -125,10 +129,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="FrmBuscador.Designer.vb">
-      <DependentUpon>FrmBuscador.vb</DependentUpon>
+    <Compile Include="FrmMenu.Designer.vb">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscador.vb">
+    <Compile Include="FrmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -139,8 +143,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscador.resx">
-      <DependentUpon>FrmBuscador.vb</DependentUpon>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -153,21 +157,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura.PNG" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\creativa 2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\creativa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lupa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondolista.PNG" />

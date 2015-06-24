@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("TelerikWinFormsApp1.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("TelerikWinFormsApp2.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -73,16 +73,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property creativa() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("creativa", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property creativa_2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("creativa 2", resourceCulture)
@@ -96,16 +86,6 @@ Namespace My.Resources
         Friend ReadOnly Property fondolista() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("fondolista", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property lupa() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("lupa", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

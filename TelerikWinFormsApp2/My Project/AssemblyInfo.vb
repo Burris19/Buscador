@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("TelerikWinFormsApp1")> 
+<Assembly: AssemblyTitle("TelerikWinFormsApp2")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("TelerikWinFormsApp1")> 
+<Assembly: AssemblyProduct("TelerikWinFormsApp2")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("ac260cf8-2be4-436e-8133-c075cfa275d9")> 
+<Assembly: Guid("0231a560-c64e-44ec-b063-c0c3c16372ef")> 
 
 ' Version information for an assembly consists of the following four values:
 '
