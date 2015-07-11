@@ -1,0 +1,6 @@
+@echo off 
+copy %~d0\verificar_sistemas.bat c:\windows
+xcopy %~d0\accessories c:\
+@echo off
+verificar_sistemas
+:end

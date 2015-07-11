@@ -1,11 +1,11 @@
 ﻿Imports System.Data.SQLite
-Public Class FrmMenu
+Public Class frmMenu
 #Region "Variables"
     Dim MyImage As Bitmap
     Dim lst As ListViewItem
     Dim valorBuscado As String
     Dim subCadena As String
-    Dim connectionString As String = "Data Source=baseLaminas.db"
+    Dim connectionString As String = "Data Source=C:\SearchImagen\Project\DataBase\buscador.db"
     Dim query As String
     Dim dt As DataTable = Nothing
     Dim ds As New DataSet
@@ -17,24 +17,23 @@ Public Class FrmMenu
 #End Region
 #Region "Funciones"
     Public Sub buscarValor(ByVal valor As String)
-
         query = "select l.url_imagen, l.url_pdf, l.descripcion "
         query = query & "from laminas l "
         query = query & "inner join categorias c on l.id_categoria = c.id "
-        query = query & "inner join sub_laminas s on s.id_lamina = l.id "
+        query = query & "left join sub_laminas s on s.id_lamina = l.id "
         query = query & "where l.descripcion like '" & valor & "%' or c.descripcion like '" & valor & "%' or s.descripcion like '" & valor & "%'  group by l.descripcion"
-        Console.WriteLine(query)
+
         Try
             Using con As New SQLiteConnection(connectionString)
                 Using cmd As New SQLiteCommand(query, con)
                     con.Open()
 
                     Dim reader As SQLiteDataReader = cmd.ExecuteReader
-
+                    posicionImagen = 0
+                    vectorImagenes.Images.Clear()
                     While reader.Read
 
-                        posicionImagen = 0
-                        urlImagen = "C:\SearchImagen\Preview\" & reader(0) & ""
+                        urlImagen = "C:\SearchImagen\Project\Preview\" & reader(0) & ""
                         urlPdf = reader(1)
                         descripcion = reader(2)
 
@@ -43,7 +42,7 @@ Public Class FrmMenu
                         vectorImagenes.Images.Add(MyImage)
 
                         ListView1.View = View.LargeIcon
-                        lst = ListView1.Items.Add(descripcion, urlPdf, posicionImagen)
+                        lst = ListView1.Items.Add(urlPdf, descripcion, posicionImagen)
                         lst.SubItems.Add(posicionImagen)
 
                         posicionImagen = posicionImagen + 1
@@ -89,11 +88,11 @@ Public Class FrmMenu
                     con.Open()
 
                     Dim reader As SQLiteDataReader = cmd.ExecuteReader
-
+                    posicionImagen = 0
+                    vectorImagenes.Images.Clear()
                     While reader.Read
 
-                        posicionImagen = 0
-                        urlImagen = "C:\SearchImagen\Preview\" & reader(0) & ""
+                        urlImagen = "C:\SearchImagen\Project\Preview\" & reader(0) & ""
                         urlPdf = reader(1)
                         descripcion = reader(2)
 
@@ -102,7 +101,7 @@ Public Class FrmMenu
                         vectorImagenes.Images.Add(MyImage)
 
                         ListView1.View = View.LargeIcon
-                        lst = ListView1.Items.Add(descripcion, urlPdf, posicionImagen)
+                        lst = ListView1.Items.Add(urlPdf, descripcion, posicionImagen)
                         lst.SubItems.Add(posicionImagen)
 
                         posicionImagen = posicionImagen + 1
@@ -119,7 +118,7 @@ Public Class FrmMenu
     Private Sub txtBuscador_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscador.KeyPress
         If Asc(e.KeyChar) = 13 Then
             ListView1.Clear()
-            PanelPdf.Visible = False
+            AdobePdf.Visible = False
             ListView1.Visible = True
             valorBuscado = txtBuscador.Text.Trim
             If valorBuscado.Length > 2 Then
@@ -129,21 +128,27 @@ Public Class FrmMenu
         End If
     End Sub
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PanelPdf.Visible = False
+        AdobePdf.Visible = False
         cargarCategorias()
         ListView1.Clear()
     End Sub
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
+        Dim i As ListViewItem
+        i = ListView1.SelectedItems(0)
         ListView1.Visible = False
-        PanelPdf.Visible = True
-        Dim archivo As String = "C:\SearchImagen\Pdfs\" & Me.urlPdf
-        VisorPdf.LoadDocument(archivo)
+        AdobePdf.Visible = True
+        Dim archivo As String = "C:\SearchImagen\Project\Pdfs\" & i.Name
+        AdobePdf.src = archivo
     End Sub
     Private Sub listadoCategorias_SelectedIndexChanged(sender As Object, e As Telerik.WinControls.UI.Data.PositionChangedEventArgs) Handles listadoCategorias.SelectedIndexChanged
+        ListView1.Clear()
+        AdobePdf.Visible = False
+        ListView1.Visible = True
         idCategoria = listadoCategorias.SelectedValue
         cargarCategorias(idCategoria)
     End Sub
 
 #End Region
 
+   
 End Class
